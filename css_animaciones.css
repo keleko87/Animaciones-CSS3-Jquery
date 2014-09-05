@@ -1,0 +1,183 @@
+/*Descargado de Font Squirrel. Este es el arhivo css que viene en la descarga y que pego aqui para que funcione la fuente*/
+@font-face {
+    font-family: 'pinco'; /*Nombre que le asignamos a este tipo de letra*/
+    src: url('web fonts/pincoyablack-webfont.eot');
+    src: url('web fonts/pincoyablack-webfont.eot?#iefix') format('embedded-opentype'), 
+         url('web fonts/pincoyablack-webfont.woff') format('woff'),
+         url('web fonts/pincoyablack-webfont.ttf') format('truetype'),
+         url('web fonts/pincoyablack-webfont.svg#pincoyablackblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+	background: #444;
+	color:#EEE;
+	font-family: Arial;
+	font-size: 16px; /*1em tendrá tamaño de 16px*/
+	text-align: center;
+}	
+
+header h1{
+	font-family: 'pinco';
+	font-size: 3em;
+	margin:0;
+	text-shadow: rgba(255,255,255, 0.5) 5px 5px 10px; /*Color con transparencia del 50% y colocacion de sombra 5px abajo,5px dcha, degradado de 10px*/
+}
+nav {
+	background: rgba(60,60,180,0.8); /*color con transparencia del 80%*/
+	bottom: 0; /*Para fijar abajo el nav*/
+	position: fixed; /*Quedará fijo sin moverse*/
+	left: 0; /*Para fijar a la izq el nav*/
+	width:100%; /*Lo hace adaptativo*/
+}
+nav ul li {
+	display: inline-block;
+	list-style: none;
+}
+nav ul li a  {
+	background: #D23D25;
+	border-radius: 0.5em;
+	color:white;
+	display: inline-block;
+	padding:0.4em 0.8em;
+	text-decoration:none;
+	transition: all 1s ease; /*+ opciones: linear.  Ver mas efectos posibles en la web*/
+	-webkit-transition: all 1s ease;
+/*
+	 transition: all 2s ease-in;  Arranca lento y termina rapido la animacion
+	-web-kit-transition: all 2s ease-in: 
+	 ease-out --> Arranca rapido y termina lento al reves que EASE-IN 
+	 */
+}
+/* ANIMACION PARA BOTONES con CSS3*/
+/*Ver Adobe Edge para mas animaciones como estas*/
+nav li a:hover  {
+	background: #fff;
+	color:black;
+	transform: scale(1.2) rotate(5deg);  /*Prueba a cambiar el numer de grados que rota */ FUnciona conjuntamente con transition se juntan los dos efectos haciendo una animacion 
+	-wekit-transform: scale(1.2) rotate(5deg);
+	/* scale aumenta el tamaño del boton y rotate rota el boton 5 grados (5degrees) al situarnos sobre él
+	*/
+}
+
+#cochecito{
+	background: rgba(0,0,0,0.7);
+	color:#FFF;
+	text-align: left;
+	width:50%;
+}
+#cochecito figcaption{
+	margin: 1em;
+}
+#cochecito img{
+	width: 100%; /*Con esto hacemos la IMG RESPONSIVE*/
+}
+#historia {
+	background: rgba(30,30,30,0.6);
+	border-radius: 0.5em;
+	/*-webkit-column-count: 2; Crea dos columnas de texto. Aun no funciona en muchos browsers*/
+	margin:0 2% 1em 1em;
+	padding: 1em;
+	text-align:left;
+	width:40%;
+}
+#cochecito, #historia {
+	display: inline-block;
+  	vertical-align: top;
+}
+#personalizacion{
+	background: rgba(0,0,0,0.8);
+	border-radius: 0.5em;
+	box-shadow: 0px 0px 5px inset;
+	display: inline-block;
+	height: 0; /*Para que en el estado inicial no aparezca*/
+	margin:0 0 6em 2%;
+	overflow:hidden;
+	opacity:0; /*Tranparente es decir NO SE VE*/
+	padding:1em 1em 0 1em;
+	transition: all 1s ease;
+	vertical-align: top;
+	width: 0; /*Para que en estado incial no se pueda ver y luego se vea con la animacion */
+}
+#personalizacion article{  /*Ahora le damos estilos a cada artcle: llantas, techo y color*/
+	background: rgba(255,255,255,0.9);
+	border-radius: 0.5em;
+	margin:0 0 1em 0;
+	padding:0.5em;
+	color: #333;
+}
+#personalizacion h2{
+	margin-top:0;
+}
+#personalizacion #color div{
+	background: rgba(230,230,230,0.5);
+	border: 3px solid #AAA;
+	cursor: pointer;
+	display: inline-block;
+	height: 3em;
+	margin: 0.5em 1%;
+	opacity: 0.85; /*Convierte toda una caja en transparencia,opacity 100% será opaco,en este caso un 30% de transparencia */
+	transition: all 1s ease;
+	vertical-align: top;
+	width: 27%; 
+}
+#personalizacion #color div:hover{
+	border: 4px solid black; 
+	opacity:1; /*En el hover le quitamos la transparencia y quedan colores opacos*/
+	transform: scale(1.1); /*Subimos un 10% el tamañno = scale(1.1)*/
+	/*NO hace falta poner el transition ya esta puesto en el elemento div arriba*/
+}
+
+
+#personalizacion #color #azul{
+	background: #166CEB; /*Le damos color azul a la caja correspondiente*/
+}
+#personalizacion #color #blanco{
+	background: #DCDCDC; /*Le damos color blanco a la caja correspondiente*/
+}
+#personalizacion #color #negro{
+	background: #121212; /*Le damos color negro a la caja correspondiente*/
+}
+#personalizacion #color #ocre{
+	background: #CABE98; /*Le damos color ocre a la caja correspondiente*/
+}
+#personalizacion #color #rojo{
+	background: #9F001C; /*Le damos color rojo a la caja correspondiente*/
+}
+#personalizacion #color #verde{
+	background: #6CB944; /*Le damos color verde a la caja correspondiente*/
+}
+
+#personalizacion #llantas figure{
+	box-shadow: rgba(0,0,0,0.2) 0px 0px 1em; /*La sobra se queda en las cuatro esquinas por igual al poner 0px en eje X y 0px en eje Y*/
+	cursor: pointer;
+	display: inline-block;
+	margin:0 0.5em 1em 0.5em;
+	padding:0.5em;
+	vertical-align: top;
+	width:30%;
+
+}
+#personalizacion #tapiceria figure {
+	box-shadow: rgb(0,0,0) 0px 0px 1em; /*La sobra se queda en las cuatro esquinas por igual al poner 0px en eje X y 0px en eje Y*/
+	cursor: pointer;
+	display: inline-block;
+	margin:1em 1.5em 1.5em 1.5em;
+	padding:0.5em;
+	vertical-align: top;
+	width:36%;
+}
+#personalizacion #llantas figure:hover img{ /*IMPORTANTE: CUnado el hover este encima del figure transforma el IMG*/
+	transform: rotate(180deg);
+}
+
+#personalizacion #tapiceria figure:hover { /*IMPORTANTE: Aqui no seleccionamos IMG porque quermos que se aument el FIGURE ENTERO  Cunado el hover este encima del figure transforma el IMG*/
+	transform: scale(1.2);
+}
+#personalizacion #llantas figure img,
+#personalizacion #tapiceria figure img
+{
+	transition: all 1s ease;
+	max-width: 100%; /*Hacemos las imagenes RESPONSIVE*/
+}
